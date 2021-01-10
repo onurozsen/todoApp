@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Model, ToDoItem } from './model';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = 'Onur';
-  items= [
-    { description: "Finish Chapter 44", status: "not done"},
-    { description: "Finish Chapter 45", status: "not done"},
-    { description: "Finish Chapter 46", status: "not done"},
-  ];
+  model = new Model();
+
+  getName(){
+    return this.model.user;
+  }
+
+  getItems(){
+    return this.model.items.filter(item => !item.status);
+  }
+
+  addItem(value){
+    if(value != ""){
+      this.model.items.push(new ToDoItem(value, false));
+    }
+  }
+
 }
