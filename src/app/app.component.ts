@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoApp';
+  user = 'Onur';
+  items= [
+    { description: "Finish Chapter 44", status: "not done"},
+    { description: "Finish Chapter 45", status: "not done"},
+    { description: "Finish Chapter 46", status: "not done"},
+  ];
 }
